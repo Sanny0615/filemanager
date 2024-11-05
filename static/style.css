@@ -1,0 +1,176 @@
+* {
+  padding: auto;
+  padding: 0;
+  
+  border-color: black;
+  background-color:  rgb(229, 230, 250);
+  
+}
+
+body { 
+  
+  font-family: Arial, sans-serif;
+  background-color: rgb(229, 230, 250);
+  color: #333;
+}
+
+.container {
+  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: #1d1e20;
+}
+
+h1 { 
+  font-size: 70px;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.upload-section {
+  background-color:  rgb(229, 230, 250);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  margin-bottom: 30px;
+
+}
+
+.file-input {
+  margin-right: 10px;
+  padding: 8px;
+}
+
+.upload-btn {
+  background-color: #c6aff0;
+
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+
+}
+
+
+
+.upload-btn:hover {
+  background-color: #abcee5;
+  box-shadow: 0 0 10px #6a5acd, 0 0 20px #6a5acd, 0 0 30px #6a5acd;
+}
+
+.category-section {
+  background-color:  rgb(229, 230, 250);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  margin-bottom: 25px;
+  box-shadow: #1d1e20;
+}
+category-section::after, .category-section::before{
+  
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(#ff4545, #00ff99, #00ff99, #ff0095,#ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  
+  
+}
+
+
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.file-card {
+  background-color: rgb(229, 230, 250);
+  border-radius: 9px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.file-card:hover {
+  transform: translateY(-2px);
+}
+
+.file-icon {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.file-icon img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.file-info {
+  text-align: center;
+}
+
+.file-name {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+.file-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-btn {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.download {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.download:hover {
+  background-color: #27ae60;
+}
+
+.delete:hover {
+  background-color: #c0392b;
+}
+.para {
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+
+.para::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid violet;
+  animation: rotateBorder 2s linear infinite;
+}

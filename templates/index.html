@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>File Manager </h1>
+        
+        <div class="upload-section">
+            <h2>Upload File</h2>
+            <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" class="file-input">
+                <button type="submit" class="upload-btn">Upload</button>
+            </form>
+        </div>
+
+        <div class="files-container">
+            {% for category in categories %}
+            <div class="category-section">
+                <h2>{{ category.title() }}</h2>
+                <div class="files-grid">
+                    {% for file in files[category] %}
+                    <div class="file-card">
+                        <div class="file-icon">
+                            {% if category == 'images' %}
+                            <img src="{{ url_for('download_file', category=category, filename=file) }}" alt="{{ file }}">
+                            {% else %}
+                            <span class="icon">📄</span>
+                            {% endif %}
+                        </div>
+                        <div class="file-info">
+                            <p class="file-name">{{ file }}</p>
+                            <div class="file-actions">
+                                <a href="{{ url_for('download_file', category=category, filename=file) }}" class="action-btn download">Download</a>
+                                <a href="{{ url_for('delete_file', category=category, filename=file) }}" class="action-btn delete">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <p class="para">this website was done by ai in file manager web page jhfurjgrejfkrjijikusijfjkfjhfjhjrf  nnf hsdhuf hdfjnfh uhfsjjyrjwfnuycnuif
+        ugehjekreji
+        wfikwrjiwr
+    </p>
+</body>
+</html>
